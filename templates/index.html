@@ -1,49 +1,9 @@
 {% extends '_base.html' %}
 
-{% block header_content %}
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>{{ COPY.content.project_name|smarty }}</h1>
-                <h2>{{ COPY.content.lorem_ipsum|smarty }}</h2>
-            </div>
-        </div>
-    </div>
-</header>
-{% endblock %}
-
 
 {% block content %}
-<h1>{{ COPY.content.project_name }}</h1>
-
-<div id="story-meta">
-    <p class="byline">by <span>{{ COPY.content.byline }}</span></p>
-    <p class="dateblock">
-        <span class="date">{{ COPY.content.pubdate }}</span>
-        <span class="time"> {{ COPY.content.pubtime }}</span>
-    </p>
-</div>
-
-<h2>Example COPY list</h2>
-<dl>
-    {% for row in COPY.example_list %}
-    <dt>{{ row.term }}</dt><dd>{{ row.definition }}</dd>
-    {% endfor %}
-</dl>
-
-<h2>JST example</h2>
-<p id="template-example"></p>
-{% endblock %}
-
-
-{% block wide_content %}
-<div class="row">
-    <div class="col-md-12">
-        <h2>{{ COPY.content.footer_title }}</h2>
-        <p>{{ COPY.content.lorem_ipsum }}</p>
-    </div>
+<div class="jumbotron">
+	<h1>Test</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
 {% endblock %}
-
-{% include '_share_modal.html' %}
