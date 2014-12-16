@@ -27,6 +27,66 @@ def index():
 
     return render_template('index.html', **context)
     
+@app.route('/history.html')
+def history():
+    """
+    Example view demonstrating rendering a simple HTML page.
+    """
+    context = make_context()
+
+    with open('data/featured.json') as f:
+        context['featured'] = json.load(f)
+
+    return render_template('history.html', **context)
+    
+@app.route('/race.html')
+def race():
+    """
+    Example view demonstrating rendering a simple HTML page.
+    """
+    context = make_context()
+
+    with open('data/featured.json') as f:
+        context['featured'] = json.load(f)
+
+    return render_template('race.html', **context)
+    
+@app.route('/economics.html')
+def economics():
+    """
+    Example view demonstrating rendering a simple HTML page.
+    """
+    context = make_context()
+
+    with open('data/featured.json') as f:
+        context['featured'] = json.load(f)
+
+    return render_template('economics.html', **context)
+    
+@app.route('/education.html')
+def education():
+    """
+    Example view demonstrating rendering a simple HTML page.
+    """
+    context = make_context()
+
+    with open('data/featured.json') as f:
+        context['featured'] = json.load(f)
+
+    return render_template('education.html', **context)    
+
+@app.route('/health.html')
+def health():
+    """
+    Example view demonstrating rendering a simple HTML page.
+    """
+    context = make_context()
+
+    with open('data/featured.json') as f:
+        context['featured'] = json.load(f)
+
+    return render_template('health.html', **context)    
+
 @app.route('/')
 def splash():
     """
