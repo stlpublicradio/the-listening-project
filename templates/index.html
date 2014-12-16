@@ -2,8 +2,62 @@
 
 
 {% block content %}
-<div class="jumbotron">
-	<h1>Test</h1>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div class="row">
+	<div class="col-md-4 intro">
+		<div class="tlp">
+			<img src="assets/listening-project-logo-big.png" class="img-responsive">
+			<h4>
+				<i class="fa fa-align-right fa-rotate-90"></i>&nbsp;
+				{{ COPY.homepage.tlp_title }}
+			</h4>
+			<p>{{ COPY.homepage.tlp_text_1 }}</p>
+			<p>{{ COPY.homepage.tlp_text_2 }}</p>
+		</div>
+		<div class="ftsoa">
+			<h4>
+				<i class="fa fa-align-left fa-rotate-270"></i>&nbsp;
+				{{ COPY.homepage.ftsoa_title }}</h4>
+			<p>{{ COPY.homepage.ftsoa_text_1 }}</p>
+			<p>{{ COPY.homepage.ftsoa_text_2 }}</p>
+		</div>
+	</div>
+	<div class="col-md-8 featured">
+		{% for row in COPY.featured %}
+			<div class="article">
+				{% if row.big_img %}
+				<img src="{{ row.big_img }}" class="img-responsive">
+				{% endif %}
+				{% if row.small_img %}
+				<img src="{{ row.small_img }}" class="pull-right thumbnail">
+				{% endif %}
+				<h3>{{ row.headline }} <small><span class="source">&mdash; {{ row.source }}</span></small></h3>
+				<p class="description">{{ row.text }}</p>
+				{% if row.link_text %}
+				<p class="link"><a href="{{ row.link }}">{{ row.link_text }}</a></p>
+				{% endif %}
+			</div>
+		{% endfor %}
+	</div>
+</div>
+<div class="row books">
+	<h2>Reading list</h2>
+	{% set rando = range(1,((COPY.books|count / 3) + 1)|int)|random %}
+		{% for row in COPY.books|batch(3) %}
+			{% for item in row if loop.index == rando %}
+			<div class="col-md-4">
+			{% if item.img_slug %}
+				<img src="assets/books/{{ item.img_slug }}.jpg" class="pull-left thumbnail">
+			{% endif %}
+			<h4><i class="fa fa-bookmark-o"></i>&nbsp;&nbsp;{{ item.title }} <small><span class="author">&mdash; {{ item.author }}</span></small></h4>
+			<p>{{ item.description }}</p>
+			{% if item.link_text %}
+				<p class="review_link">Review: <a href="{{ item.link }}">{{ item.link_text }}</a></p>
+			{% endif %}
+			</div>	
+			{% endfor %}
+	{% endfor %}
+	<div class="pull-right">
+		<p class="link"><a href="#">Want more to read?</a></p>
+	</div>
 </div>
 {% endblock %}
