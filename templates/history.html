@@ -1,0 +1,32 @@
+{% extends '_base.html' %}
+
+
+{% block content %}
+<div class="row">
+	<div class="col-md-4 intro">
+		<div class="tlp">
+			<img src="assets/listening-project-logo-big.png" class="img-responsive">
+			<div class="page-description">
+				<h1 class="page-title">History</h1>
+				<p>{{ COPY.text.history_description }}</p>
+			</div>
+			<h3>Resources</h3>
+			
+			{% for row in COPY.history_resources %}
+
+				{% include '_resources.html' %}
+			
+			{% endfor %}
+		</div>
+	</div>
+	<div class="col-md-8 featured">
+		{% for row in COPY.history_articles %}
+
+			{% include '_featured_articles.html' %}
+
+		{% endfor %}
+	</div>
+</div>
+
+{% include '_books.html' %}
+{% endblock %}
