@@ -1,0 +1,21 @@
+<div class="row books">
+	<h2>Reading list</h2>
+	{% set rando = range(1,((COPY.books|count / 3) + 1)|int)|random %}
+		{% for row in COPY.books|batch(3) %}
+			{% for item in row if loop.index == rando %}
+			<div class="col-md-4">
+			{% if item.img_slug %}
+				<img src="assets/books/{{ item.img_slug }}.jpg" class="pull-left thumbnail">
+			{% endif %}
+			<h4><i class="fa fa-bookmark-o"></i>&nbsp;&nbsp;{{ item.title }} <small><span class="author">&mdash; {{ item.author }}</span></small></h4>
+			<p>{{ item.description }}</p>
+			{% if item.link_text %}
+				<p class="review_link">Review: <a href="{{ item.link }}">{{ item.link_text }}</a></p>
+			{% endif %}
+			</div>	
+			{% endfor %}
+	{% endfor %}
+	<div class="pull-right">
+		<p class="link"><a href="#">Want more to read?</a></p>
+	</div>
+</div>

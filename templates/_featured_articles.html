@@ -1,0 +1,13 @@
+			<div class="article">
+				{% if row.big_img %}
+				<img src="{{ row.big_img }}" class="img-responsive">
+				{% endif %}
+				{% if row.small_img %}
+				<img src="{{ row.small_img }}" class="pull-right thumbnail">
+				{% endif %}
+				<h3>{{ row.headline }} <small><span class="source">&mdash; {{ row.source }}</span></small></h3>
+				<p class="description">{{ row.text }}</p>
+				{% if row.link_text %}
+				<p class="link"><a href="{{ row.link }}">{{ row.link_text }}</a></p>
+				{% endif %}
+			</div>
