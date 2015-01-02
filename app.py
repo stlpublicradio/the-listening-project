@@ -97,7 +97,19 @@ def books():
     with open('data/featured.json') as f:
         context['featured'] = json.load(f)
 
-    return render_template('books.html', **context)        
+    return render_template('books.html', **context)
+    
+@app.route('/video-audio.html')
+def books():
+    """
+    Example view demonstrating rendering a simple HTML page.
+    """
+    context = make_context()
+
+    with open('data/featured.json') as f:
+        context['featured'] = json.load(f)
+
+    return render_template('video-audio.html', **context)        
 
 @app.route('/')
 def splash():

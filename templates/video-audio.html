@@ -1,0 +1,36 @@
+{% extends '_base.html' %}
+
+
+{% block content %}
+<div class="row">
+	<div class="col-md-4 intro">
+		<div class="tlp">
+			<img src="assets/listening-project-logo-big.png" class="img-responsive">
+			<div class="page-description">
+				<h1 class="page-title">Video &amp; audio</h1>
+				<p>{{ COPY.text.video_audio_description }}</p>
+			</div>
+			<h3>Resources</h3>
+			
+			{% for row in COPY.video_audio_resources %}
+
+				{% include '_resources.html' %}
+			
+			{% endfor %}
+		</div>
+	</div>
+	<div class="col-md-8 featured">
+		{% for row in COPY.video_audio %}
+		<div class="video_audio-page media">
+		  <div class="media-body">
+		    <h4 class="media-heading">{{ row.title }} <small>{{ row.source }}</small></h4>
+		    {{ row.description }}
+		  </div>
+		  <div class="video-embed">
+			  {{ row.embed_code }}
+		  </div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
