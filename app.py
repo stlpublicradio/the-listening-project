@@ -100,7 +100,7 @@ def books():
     return render_template('books.html', **context)
     
 @app.route('/video-audio.html')
-def books():
+def video():
     """
     Example view demonstrating rendering a simple HTML page.
     """
@@ -112,7 +112,7 @@ def books():
     return render_template('video-audio.html', **context)
     
 @app.route('/other-resources.html')
-def books():
+def other():
     """
     Example view demonstrating rendering a simple HTML page.
     """
