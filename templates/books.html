@@ -26,8 +26,8 @@
 		    <img src="assets/books/{{ row.img_slug }}.jpg">
 		  </a>
 		  <div class="media-body">
-		    <h4 class="media-heading">{{ row.title }} <small>{{ row.author }}</small></h4>
-		    {{ row.description }}
+		    <h4 class="media-heading"><a href="{{row.link}}">{{ row.title }} <small>{{ row.author }}</small></a></h4>
+		    <p>{{ row.description }}</p>
 		  </div>
 		</div>
 		{% endfor %}
