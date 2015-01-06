@@ -5,7 +5,7 @@
 <div class="row">
 	<div class="col-md-4 intro">
 		<div class="tlp">
-			<img src="assets/listening-project-logo-big.png" class="img-responsive">
+			<img src="./assets/listening-project-logo-big.png" class="img-responsive">
 			<div class="page-description">
 				<h1 class="page-title">Books</h1>
 				<p>{{ COPY.text.books_description }}</p>
@@ -23,7 +23,7 @@
 		{% for row in COPY.books %}
 		<div class="books-page media">
 		  <a class="pull-{{ loop.cycle('left', 'right') }}" href="#">
-		    <img src="assets/books/{{ row.img_slug }}.jpg">
+		    <img src="./assets/books/{{ row.img_slug }}.jpg">
 		  </a>
 		  <div class="media-body">
 		    <h4 class="media-heading"><a href="{{row.link}}">{{ row.title }} <small>{{ row.author }}</small></a></h4>

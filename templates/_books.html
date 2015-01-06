@@ -5,7 +5,7 @@
 			{% for item in row if loop.index == rando %}
 			<div class="col-md-4">
 			{% if item.img_slug %}
-				<img src="assets/books/{{ item.img_slug }}.jpg" class="pull-left thumbnail">
+				<img src="./assets/books/{{ item.img_slug }}.jpg" class="pull-left thumbnail">
 			{% endif %}
 			<h4><i class="fa fa-bookmark-o"></i>&nbsp;&nbsp;{{ item.title }} <small><span class="author">&mdash; {{ item.author }}</span></small></h4>
 			<p>{{ item.description }}</p>
