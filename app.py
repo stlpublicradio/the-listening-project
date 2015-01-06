@@ -15,7 +15,20 @@ app.jinja_env.filters['smarty'] = smarty_filter
 app.jinja_env.filters['urlencode'] = urlencode_filter
 
 # Example application views
+
 @app.route('/index.html')
+def splash():
+    """
+    Example view demonstrating rendering a simple HTML page.
+    """
+    context = make_context()
+
+    with open('data/featured.json') as f:
+        context['featured'] = json.load(f)
+
+    return render_template('splash.html', **context)
+    
+@app.route('/home.html')
 def index():
     """
     Example view demonstrating rendering a simple HTML page.
@@ -123,17 +136,6 @@ def other():
 
     return render_template('other-resources.html', **context)            
 
-@app.route('/')
-def splash():
-    """
-    Example view demonstrating rendering a simple HTML page.
-    """
-    context = make_context()
-
-    with open('data/featured.json') as f:
-        context['featured'] = json.load(f)
-
-    return render_template('splash.html', **context)
 
 @app.route('/widget.html')
 def widget():
