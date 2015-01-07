@@ -10,7 +10,7 @@
 			<h4><i class="fa fa-bookmark-o"></i>&nbsp;&nbsp;{{ item.title }} <small><span class="author">&mdash; {{ item.author }}</span></small></h4>
 			<p>{{ item.description }}</p>
 			{% if item.link_text %}
-				<p class="review_link">Review: <a href="{{ item.link }}">{{ item.link_text }}</a></p>
+				<p class="review_link"><a href="{{ item.link }}">{{ item.link_text }}</a></p>
 			{% endif %}
 			</div>	
 			{% endfor %}
