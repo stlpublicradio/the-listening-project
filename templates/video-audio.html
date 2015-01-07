@@ -2,10 +2,10 @@
 
 
 {% block content %}
-<div class="row">
-	<div class="col-md-4 intro">
+<div class="row resources">
+	<div class="col-md-2 intro">
 		<div class="tlp">
-			<img src="./assets/listening-project-logo-big.png" class="img-responsive">
+			<img src="./assets/listening-project-logo.png" class="img-responsive">
 			<div class="page-description">
 				<h1 class="page-title">Video &amp; audio</h1>
 				<p>{{ COPY.text.video_audio_description }}</p>
@@ -19,7 +19,7 @@
 			{% endfor %}
 		</div>
 	</div>
-	<div class="col-md-8 featured">
+	<div class="col-md-10 featured">
 		{% for row in COPY.video_audio %}
 		<div class="video_audio-page media">
 		  <div class="media-body">
