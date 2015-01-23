@@ -21,10 +21,18 @@
 		    <h4 class="media-heading">{{ row.title }} <small>{{ row.source }}</small></h4>
 		    {{ row.description }}
 		  </div>
+		  {% if row.embed_code %}
 		  <div class="video-embed">
 			  {{ row.embed_code }}
 		  </div>
+		  {% endif %}
+		  {% if row.link %}
+		  <div class="link">
+			  <a href="{{ row.link }}">Link</a>
+		  </div>
+		  {% endif %}
 		</div>
+		<hr>
 		{% endfor %}
 	</div>
 </div>
