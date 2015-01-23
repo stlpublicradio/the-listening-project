@@ -12,6 +12,40 @@
 			<p>{{ COPY.text.intro_text_1 }}</p>
 			<p>{{ COPY.text.intro_text_2 }}</p>
 		</div>
+		
+		<!-- Setup form for texts -->
+		<!--CONFIRMATION PAGE REDIRECT-->
+
+		<script type="text/javascript">var submitted=false;
+		if(submitted){
+				document.getElementById("texts").innerHTML = "Thanks!"};</script>
+			
+			<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){document.getElementById('texts').innerHTML = '<h3>Thanks! We\'ll be in touch.</h3>'}"></iframe>
+
+		<!--END OF CONFIRMATION PAGE REDIRECT-->
+
+		<div id="texts" class="well">
+			<h3>Get texts from The Listening Project</h3>
+			<p><em>We'll periodically update you on what we're doing and ways you can contribute to the discussion. Just fill out the form below.<em></p>
+			<form action="https://docs.google.com/forms/d/14Zo4r8A_kZt_BuszuLjABDFxhY8aBVfvK7TZHYN93ZI/formResponse" method="POST" id="ss-form" target="hidden_iframe" onsubmit="submitted=true;" class="form-inline">
+				<div class="form-group">
+					<label for="entry_1298805811">Name
+					</label>
+					<input type="text" name="entry.1298805811" id="entry_1298805811">
+				</div>
+				<div class="form-group">
+					<label for="entry_1920430629">Phone number
+					</label>
+					<input type="text" name="entry.1920430629" placeholder="314-555-5555" id="entry_1920430629">
+				</div>
+				<input type="hidden" name="draftResponse" value="[,,&quot;1157336995433230965&quot;]">
+				<input type="hidden" name="pageHistory" value="0">
+				<input type="hidden" name="fbzx" value="1157336995433230965">
+			<button type="submit" name="submit" value="Submit" id="ss-submit" class="btn btn-default">Submit</button>
+		</form>
+		</div>
+
+
 		<div id="button">
 			<a href="home.html" class="btn btn-lg btn-default">Learn More</a>
 		</div>
