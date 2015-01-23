@@ -22,9 +22,11 @@
 	<div class="col-md-10 featured">
 		{% for row in COPY.books %}
 		<div class="books-page media">
+		  {% if row.img_slug %}
 		  <a class="pull-{{ loop.cycle('left', 'right') }}" href="#">
 		    <img src="./assets/books/{{ row.img_slug }}.jpg">
 		  </a>
+		  {% endif %}
 		  <div class="media-body">
 		    <h4 class="media-heading"><a href="{{row.link}}">{{ row.title }} <small>{{ row.author }}</small></a></h4>
 		    <p>{{ row.description }}</p>
