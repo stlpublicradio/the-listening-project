@@ -28,6 +28,13 @@
 
 		{% endfor %}
 	</div>
+	<div class="col-md-8 featured calendar">
+		<h2>Community Meetings</h2>
+		{% for row in COPY.calendar %}
+			<div class="meeting well"><a href="http://maps.google.com/maps?daddr={{ row.address|replace(" ", "+") }}"><button type="button" class="btn btn-lg btn-info pull-right">Get Directions</button></a><p class="lead">{{ row.date }} at {{ row.time }}</p><p>{{ row.place_name }}, {{ row.address }}</p></div>
+		
+		{% endfor %}
+	</div>
 </div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -95,8 +102,8 @@
 
 {% block extra_foot %}
 <script type="text/javascript">
-$('#myModal').modal({
-	show: true
-})
+	$('#myModal').modal({
+		show: true
+	})
 </script>
 {% endblock %}
