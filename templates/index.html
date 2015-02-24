@@ -21,19 +21,21 @@
 			<p>{{ COPY.homepage.ftsoa_text_2 }}</p>
 		</div>
 	</div>
-	<div class="col-md-8 featured">
-		{% for row in COPY.featured %}
+	<div class="col-md-8">
+		<div class="col-md-12 featured">
+			{% for row in COPY.featured %}
 
-			{% include '_featured_articles.html' %}
+				{% include '_featured_articles.html' %}
 
-		{% endfor %}
-	</div>
-	<div class="col-md-8 featured calendar">
-		<h2>Community Meetings</h2>
-		{% for row in COPY.calendar %}
-			<div class="meeting well"><a href="http://maps.google.com/maps?daddr={{ row.address|replace(" ", "+") }}"><button type="button" class="btn btn-lg btn-info pull-right">Get Directions</button></a><p class="lead">{{ row.date }} at {{ row.time }}</p><p>{{ row.place_name }}, {{ row.address }}</p></div>
+			{% endfor %}
+		</div>
+		<div class="col-md-12 featured calendar">
+			<h2>Community Meetings</h2>
+			{% for row in COPY.calendar %}
+				<div class="meeting well"><a href="http://maps.google.com/maps?daddr={{ row.address|replace(" ", "+") }}"><button type="button" class="btn btn-lg btn-info pull-right">Get Directions</button></a><p class="lead">{{ row.date }} at {{ row.time }}</p><p>{{ row.place_name }}, {{ row.address }}</p></div>
 		
-		{% endfor %}
+			{% endfor %}
+		</div>
 	</div>
 </div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
