@@ -29,6 +29,7 @@
 
 			{% endfor %}
 		</div>
+		{% if COPY.calendar %}
 		<div class="col-md-12 featured calendar">
 			<h2>Community Meetings</h2>
 			{% for row in COPY.calendar %}
@@ -36,6 +37,7 @@
 		
 			{% endfor %}
 		</div>
+		{% endif %}
 	</div>
 </div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
