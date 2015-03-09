@@ -1,9 +1,9 @@
 			<div class="article">
 				{% if row.big_img %}
-				<img src="{{ row.big_img }}" class="img-responsive">
+				<img src="./assets/{{ row.big_img }}" class="img-responsive img-featured">
 				{% endif %}
 				{% if row.small_img %}
-				<img src="{{ row.small_img }}" class="pull-right thumbnail">
+				<img src="./assets/{{ row.small_img }}" class="pull-right thumbnail">
 				{% endif %}
 				<h3>{{ row.headline }}{% if row.source %} <small><span class="source">&mdash; {{ row.source }}</span></small>{% endif %}</h3>
 				<p class="description">{{ row.text }}</p>
