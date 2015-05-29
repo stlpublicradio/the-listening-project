@@ -2,15 +2,18 @@
 <html lang="en">
 
 <head>
+    <!-- CHARTBEAT -->
+    <script type="text/javascript">
+        var _sf_startpt=(new Date()).getTime();
+    </script>
+
     <title>The Listening Project</title>
 
     <!-- META TAGS -->
     {% include '_meta.html' %}
 
-    <!-- CHARTBEAT -->
-    <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
-
     <!-- FONTS -->
+    {% include '_fonts.html' %}
 
     <!-- CSS -->
 	{{ CSS.push('less/app.less') }}
@@ -22,7 +25,6 @@
     {{ JS.push('js/lib/modernizr.js') }}
     {{ JS.push('js/lib/retina.min.js') }}
 	{{ JS.render('js/app-header.min.js') }}
-	
 
     {% include '_social_tags.html' %}
 
@@ -30,6 +32,11 @@
     {% endblock extra_head %}
 </head>
 <body>
+    <!-- ANALYTICS JAVASCRIPT -->
+    {{ JS.push('js/app_config.js') }}
+    {{ JS.push('js/analytics.js') }}
+    {{ JS.render('js/app-header.min.js') }}
+
     <a class="sr-only" href="#content">Skip To Content</a>
 
     {% block outer_content %}
@@ -49,7 +56,6 @@
             {% block wide_content %}
             {% endblock wide_content %}
     </section>
-
     {% include '_footer.html' %}
 
 
@@ -57,15 +63,14 @@
 
     {{ JS.push('js/lib/jquery.js') }}
     {{ JS.push('js/lib/underscore.js') }}
+    {{ JS.push('js/lib/modernizr.js') }}
     {{ JS.push('js/lib/bootstrap.js') }}
     {{ JS.push('js/lib/moment.js') }}
     {{ JS.push('js/app_config.js') }}
     {{ JS.push('js/copy.js') }}
-    {{ JS.push('js/console.js') }}
     {{ JS.push('js/templates.js') }}
     {{ JS.push('js/app.js') }}
     {% block extra_foot_js %}{% endblock extra_foot_js %}
-    {{ JS.push('js/analytics.js') }}
     {{ JS.render('js/app-footer.min.js') }}
 
     {% block extra_foot %}

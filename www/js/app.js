@@ -1,32 +1,17 @@
 // Global jQuery references
-var $shareModal = null;
 var $commentCount = null;
-
-// Global state
-var firstShareLoad = true;
 
 /*
  * Run on page load.
  */
 var onDocumentLoad = function(e) {
     // Cache jQuery references
-    $shareModal = $('#share-modal');
     $commentCount = $('.comment-count');
-
-    // Bind events
-    $shareModal.on('shown.bs.modal', onShareModalShown);
-    $shareModal.on('hidden.bs.modal', onShareModalHidden);
-
-    // configure ZeroClipboard on share panel
-    ZeroClipboard.config({ swfPath: 'js/lib/ZeroClipboard.swf' });
-    var clippy = new ZeroClipboard($(".clippy"));
-
-    clippy.on('ready', function(readyEvent) {
-        clippy.on('aftercopy', onClippyCopy);
-    });
 
     renderExampleTemplate();
     getCommentCount(showCommentCount);
+
+    SHARE.setup();
 }
 
 /*
@@ -44,3 +29,19 @@ var renderExampleTemplate = function() {
     $('#template-example').html(html);
 }
 
+/*
+ * Display the comment count.
+ */
+var showCommentCount = function(count) {
+    $commentCount.text(count);
+
+    if (count > 0) {
+        $commentCount.addClass('has-comments');
+    }
+
+    if (count > 1) {
+        $commentCount.next('.comment-label').text('Comments');
+    }
+}
+
+$(onDocumentLoad);
