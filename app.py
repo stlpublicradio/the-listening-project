@@ -34,6 +34,111 @@ def index():
         context['featured'] = json.load(f)
 
     return make_response(render_template('index.html', **context))
+    
+@app.route('/history.html')
+@oauth.oauth_required
+def history():
+    """
+    Example view demonstrating rendering a simple HTML page.
+    """
+    context = make_context()
+
+    with open('data/featured.json') as f:
+        context['featured'] = json.load(f)
+
+    return make_response(render_template('history.html', **context))
+    
+@app.route('/race.html')
+@oauth.oauth_required
+def race():
+    """
+    Example view demonstrating rendering a simple HTML page.
+    """
+    context = make_context()
+
+    with open('data/featured.json') as f:
+        context['featured'] = json.load(f)
+
+    return make_response(render_template('race.html', **context))
+    
+@app.route('/economics.html')
+@oauth.oauth_required
+def economics():
+    """
+    Example view demonstrating rendering a simple HTML page.
+    """
+    context = make_context()
+
+    with open('data/featured.json') as f:
+        context['featured'] = json.load(f)
+
+    return make_response(render_template('economics.html', **context))
+    
+@app.route('/education.html')
+@oauth.oauth_required
+def education():
+    """
+    Example view demonstrating rendering a simple HTML page.
+    """
+    context = make_context()
+
+    with open('data/featured.json') as f:
+        context['featured'] = json.load(f)
+
+    return make_response(render_template('education.html', **context))
+    
+@app.route('/health.html')
+@oauth.oauth_required
+def health():
+    """
+    Example view demonstrating rendering a simple HTML page.
+    """
+    context = make_context()
+
+    with open('data/featured.json') as f:
+        context['featured'] = json.load(f)
+
+    return make_response(render_template('health.html', **context))
+    
+@app.route('/books.html')
+@oauth.oauth_required
+def books():
+    """
+    Example view demonstrating rendering a simple HTML page.
+    """
+    context = make_context()
+
+    with open('data/featured.json') as f:
+        context['featured'] = json.load(f)
+
+    return make_response(render_template('books.html', **context))
+    
+    
+@app.route('/video-audio.html')
+@oauth.oauth_required
+def video():
+    """
+    Example view demonstrating rendering a simple HTML page.
+    """
+    context = make_context()
+
+    with open('data/featured.json') as f:
+        context['featured'] = json.load(f)
+
+    return make_response(render_template('video-audio.html', **context))
+    
+@app.route('/other-resources.html')
+@oauth.oauth_required
+def other():
+    """
+    Example view demonstrating rendering a simple HTML page.
+    """
+    context = make_context()
+
+    with open('data/featured.json') as f:
+        context['featured'] = json.load(f)
+
+    return make_response(render_template('other-resources.html', **context))
 
 @app.route('/widget.html')
 def widget():
