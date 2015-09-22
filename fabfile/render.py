@@ -140,4 +140,3 @@ def render_all():
         # NB: Flask response object has utf-8 encoded the data
         with open(filename, 'w') as f:
             f.write(content)
-

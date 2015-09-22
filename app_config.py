@@ -37,20 +37,11 @@ ASSETS_SLUG = 'the-listening-project'
 """
 DEPLOYMENT
 """
-PRODUCTION_S3_BUCKET = {
-        'bucket_name': 'apps.stlpublicradio.org',
-        'region': 'us-east-1'
-    }
+PRODUCTION_S3_BUCKET = 'apps.stlpublicradio.org'
 
-STAGING_S3_BUCKET = {
-        'bucket_name': 'stlpr-stg',
-        'region': 'us-east-1'
-    }
+STAGING_S3_BUCKET = 'stlpr-stg'
 
-ASSETS_S3_BUCKET = {
-    'bucket_name': 'stlpr-assets',
-    'region': 'us-east-1'
-}
+ASSETS_S3_BUCKET = 'stlpr-assets'
 
 DEFAULT_MAX_AGE = 20
 
@@ -103,7 +94,7 @@ COPY_PATH = 'data/copy.xlsx'
 """
 SHARING
 """
-SHARE_URL = 'http://%s/%s/' % (PRODUCTION_S3_BUCKET['bucket_name'], PROJECT_SLUG)
+SHARE_URL = 'http://%s/%s/' % (PRODUCTION_S3_BUCKET, PROJECT_SLUG)
 
 # """
 # ADS
@@ -123,7 +114,7 @@ SERVICES
 
 NPR_GOOGLE_ANALYTICS = {
     'ACCOUNT_ID': 'UA-2139719-1',
-    'DOMAIN': PRODUCTION_S3_BUCKET['bucket_name'],
+    'DOMAIN': PRODUCTION_S3_BUCKET,
     'TOPICS': '' # e.g. '[1014,3,1003,1002,1001]'
 }
 
@@ -184,8 +175,8 @@ def configure_targets(deployment_target):
 
     if deployment_target == 'production':
         S3_BUCKET = PRODUCTION_S3_BUCKET
-        S3_BASE_URL = 'http://%s/%s' % (S3_BUCKET['bucket_name'], PROJECT_SLUG)
-        S3_DEPLOY_URL = 's3://%s/%s' % (S3_BUCKET['bucket_name'], PROJECT_SLUG)
+        S3_BASE_URL = 'http://%s/%s' % (S3_BUCKET, PROJECT_SLUG)
+        S3_DEPLOY_URL = 's3://%s/%s' % (S3_BUCKET, PROJECT_SLUG)
         SERVERS = PRODUCTION_SERVERS
         SERVER_BASE_URL = 'http://%s/%s' % (SERVERS[0], PROJECT_SLUG)
         DISQUS_SHORTNAME = ''
@@ -193,8 +184,8 @@ def configure_targets(deployment_target):
         ASSETS_MAX_AGE = 86400
     elif deployment_target == 'staging':
         S3_BUCKET = STAGING_S3_BUCKET
-        S3_BASE_URL = 'http://%s/%s' % (S3_BUCKET['bucket_name'], PROJECT_SLUG)
-        S3_DEPLOY_URL = 's3://%s/%s' % (S3_BUCKET['bucket_name'], PROJECT_SLUG)
+        S3_BASE_URL = 'http://%s/%s' % (S3_BUCKET, PROJECT_SLUG)
+        S3_DEPLOY_URL = 's3://%s/%s' % (S3_BUCKET, PROJECT_SLUG)
         SERVERS = STAGING_SERVERS
         SERVER_BASE_URL = 'http://%s/%s' % (SERVERS[0], PROJECT_SLUG)
         DISQUS_SHORTNAME = ''
